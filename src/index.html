@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../dist/output.css" rel="stylesheet">
+</head>
+<body class="bg-slate-900">
+    <div class="container text-center">
+        <div class="text-white mt-56 text-9xl font-bold font-sans">
+            <div id="clock" style="
+                background: linear-gradient(45deg, #00ffff, #ff00ff);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            "></div>
+        </div>
+    </div>
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('clock').innerText = `${hours}:${minutes}:${seconds}`;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock(); // اجرا در لحظه بارگذاری
+    </script>
+</body>
+</html>
